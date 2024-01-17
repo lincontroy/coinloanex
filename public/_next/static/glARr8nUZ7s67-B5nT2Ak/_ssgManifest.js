@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fcoin\u002F[coin]","\u002Floans\u002F[coin]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()

@@ -82,6 +82,37 @@
   <script src="_next/static/chunks/pages/index-68cab8d81a3104c7.js" defer=""></script>
   <script src="_next/static/glARr8nUZ7s67-B5nT2Ak/_buildManifest.js" defer=""></script>
   <script src="_next/static/glARr8nUZ7s67-B5nT2Ak/_ssgManifest.js" defer=""></script>
+  <style>
+    /* Customize the button styles as needed */
+    .custom-menu-btn {
+      cursor: pointer;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+    }
+
+    /* Add some spacing for better visibility */
+    .menu-item {
+      display: block;
+      margin-bottom: 10px;
+      color: #fff; /* Updated to white text color */
+      text-decoration: none;
+      padding: 10px; /* Added padding for the box appearance */
+      border-radius: 4px; /* Added border-radius for rounded corners */
+      background-color: #007bff; /* Added background color for the box */
+      transition: background-color 0.3s ease; /* Smooth transition on hover */
+    }
+
+    /* Adjust the background color on hover */
+ 
+
+    /* Container for mobile menu items */
+    #mobile-menu {
+      display: none;
+    }
+  </style>
 </head>
 
 <body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZ4J77B" height="0" width="0"
@@ -95,10 +126,15 @@
 			
 			</div>
         <div>
-          <div class="styles_menuToggleBtn__rts02">
+          <div class="styles_menuToggleBtn__rts02" onclick="toggleMenu()">
             <div></div>
           </div>
         </div>
+        <div id="mobile-menu" style="display: none;">
+        <a href="/login" class="menu-item">Login</a>
+        <a href="/register" class="menu-item">Sign up</a>
+        
+      </div>
         <div class="styles_headerLinks___46tp"><a class="styles_navLink__ix7nP" href="index.html">Crypto loans</a><a
             class="styles_navLink__ix7nP" href="earn/index.html">Savings</a><a class="styles_navLink__ix7nP"
             href="partners/index.html">For partners</a><a class="styles_navLink__ix7nP" href="about/index.html">About
@@ -1138,5 +1174,12 @@ sendCollateralInput.addEventListener("input", function() {
 
 
 </script>
+<script>
+   
+    function toggleMenu() {
+      var mobileMenu = document.getElementById("mobile-menu");
+      mobileMenu.style.display = (mobileMenu.style.display === "block") ? "none" : "block";
+    }
+  </script>
 </body>
 </html>

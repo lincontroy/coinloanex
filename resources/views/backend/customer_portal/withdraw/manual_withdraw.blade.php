@@ -5,7 +5,7 @@
 	<div class="col-lg-8 offset-lg-2">
 		<div class="card">
 			<div class="card-header">
-				<h4 class="header-title text-center">{{ _lang('Withdraw Money') }}</h4>
+				<h4 class="header-title text-center">{{ _lang('Withdraw') }}</h4>
 			</div>
 			<div class="card-body">
 				<form method="post" class="validate" autocomplete="off" action="{{ route('withdraw.manual_withdraw', 1) }}" enctype="multipart/form-data">

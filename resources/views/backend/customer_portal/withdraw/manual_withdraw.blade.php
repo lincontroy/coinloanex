@@ -22,7 +22,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="control-label"></label>
-								<input type="text" class="form-control" name="requirements[{{ str_replace(' ','_',$requirement) }}]" required>
+								<input type="text" class="form-control" name="" required>
 							</div>
 						</div>
 						

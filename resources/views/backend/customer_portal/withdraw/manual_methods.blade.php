@@ -13,7 +13,7 @@
                     <div class="col-md-4">
                         <div class="card mb-4">
                             <div class="card-body text-center">
-                                <img src="{{ asset('btclogo.png') }}" class="gateway-img"/>
+                                <img src="{{ asset('public/btclogo.png') }}" class="gateway-img"/>
                                 <h5>Btc</h5>
                                 <h6 class="pt-1"></h6>
                                 <h6 class="pt-1"></h6>
@@ -25,7 +25,7 @@
                     <div class="col-md-4">
                         <div class="card mb-4">
                             <div class="card-body text-center">
-                                <img src="{{ asset('usdt.png') }}" class="gateway-img"/>
+                                <img src="{{ asset('public/usdt.png') }}" class="gateway-img"/>
                                 <h5>Usdt</h5>
                                 <h6 class="pt-1"></h6>
                                 <h6 class="pt-1"></h6>

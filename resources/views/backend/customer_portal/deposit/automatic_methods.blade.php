@@ -28,7 +28,7 @@
                             <div class="card-body text-center">
                                 <img src="{{ asset('public/usdtcode.jpeg')}}" class="gateway-img"/>
                                 <h5>USDT (trc20 )</h5>
-                                <p>Scan the code below</p>
+                                <p>Scan the code above to make a usdt trc20 deposit</p>
                     
                             </div>
                         </div>

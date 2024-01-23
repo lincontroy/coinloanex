@@ -23,16 +23,24 @@
 	</div>
 
 	<div class="row">
-		<?php $__currentLoopData = $account_balance; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $currency): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+		
 		<div class="col-md">
 			<div class="card mb-4">
 				<div class="card-body">
-					<h6><?php echo e($currency->name.' '._lang('Balance')); ?></h6>
-					<h6 class="pt-1"><b><?php echo e(decimalPlace($currency->balance, currency($currency->name))); ?></b></h6>
+					<h6>USDT BALANCE</h6>
+					<h6 class="pt-1"><b>0</b></h6>
 				</div>
 			</div>
 		</div>
-		<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+		<div class="col-md">
+			<div class="card mb-4">
+				<div class="card-body">
+					<h6>BTC BALANCE</h6>
+					<h6 class="pt-1"><b>0</b></h6>
+				</div>
+			</div>
+		</div>
+		
 	</div>
 
 	<div class="row">

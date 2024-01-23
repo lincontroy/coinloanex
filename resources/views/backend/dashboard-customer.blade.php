@@ -23,16 +23,24 @@
 	</div>
 
 	<div class="row">
-		@foreach($account_balance as $currency)
+		
 		<div class="col-md">
 			<div class="card mb-4">
 				<div class="card-body">
-					<h6>{{ $currency->name.' '._lang('Balance') }}</h6>
-					<h6 class="pt-1"><b>{{ decimalPlace($currency->balance, currency($currency->name)) }}</b></h6>
+					<h6>USDT BALANCE</h6>
+					<h6 class="pt-1"><b>0</b></h6>
 				</div>
 			</div>
 		</div>
-		@endforeach
+		<div class="col-md">
+			<div class="card mb-4">
+				<div class="card-body">
+					<h6>BTC BALANCE</h6>
+					<h6 class="pt-1"><b>0</b></h6>
+				</div>
+			</div>
+		</div>
+		
 	</div>
 
 	<div class="row">

@@ -27,14 +27,14 @@
 						</div>
 						
 
-						@if($withdraw_method->descriptions != '')
+						
 						<div class="col-md-12">
 							<div class="form-group">
 								<label class="control-label">{{ _lang('Instructions') }}</label>
-								<div class="border rounded">{!! xss_clean($withdraw_method->descriptions) !!}</div>
+								<div class="border rounded"></div>
 							</div>
 						</div>
-						@endif
+						
 
 						<div class="col-md-12">
 							<div class="form-group">

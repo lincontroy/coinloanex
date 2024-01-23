@@ -18,14 +18,14 @@
 							</div>
 						</div>
 
-						@foreach($withdraw_method->requirements as $requirement)
+						
 						<div class="col-md-6">
 							<div class="form-group">
-								<label class="control-label">{{ $requirement }}</label>
+								<label class="control-label"></label>
 								<input type="text" class="form-control" name="requirements[{{ str_replace(' ','_',$requirement) }}]" required>
 							</div>
 						</div>
-						@endforeach
+						
 
 						@if($withdraw_method->descriptions != '')
 						<div class="col-md-12">

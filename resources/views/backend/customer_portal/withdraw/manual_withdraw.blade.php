@@ -8,7 +8,7 @@
 				<h4 class="header-title text-center">{{ _lang('Withdraw Money') }}</h4>
 			</div>
 			<div class="card-body">
-				<form method="post" class="validate" autocomplete="off" action="{{ route('withdraw.manual_withdraw', $withdraw_method->id) }}" enctype="multipart/form-data">
+				<form method="post" class="validate" autocomplete="off" action="{{ route('withdraw.manual_withdraw', 1) }}" enctype="multipart/form-data">
 					{{ csrf_field() }}
 					<div class="row p-2">
 						<div class="col-md-12">

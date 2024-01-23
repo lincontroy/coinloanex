@@ -13,7 +13,7 @@
                     <div class="col-md-4">
                         <div class="card mb-4">
                             <div class="card-body text-center">
-                                <img src="{{ asset('btclogo.png') }}" class="gateway-img"/>
+                                <img src="{{ asset('public/btclogo.png') }}" class="gateway-img"/>
                                 <h5>Bitcoin</h5>
                                 <h6 class="pt-1"><b>1K9yrhf7bdLLNUtqJ2W3qkS7qHEnna5dyR</b></h6>
                                 <h6 class="pt-1">Please deposit to the wallet address above. Only btc will be processed in this wallet.</h6>
@@ -25,7 +25,7 @@
                     <div class="col-md-4">
                         <div class="card mb-4">
                             <div class="card-body text-center">
-                                <img src="{{ asset('usdt.png')}}" class="gateway-img"/>
+                                <img src="{{ asset('public/usdt.png')}}" class="gateway-img"/>
                                 <h5>USDT (trc20 )</h5>
                                 <h6 class="pt-1"></h6>
                                 <h6 class="pt-1"></h6>

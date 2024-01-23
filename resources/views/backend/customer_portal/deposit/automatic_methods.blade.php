@@ -9,20 +9,31 @@
 			</div>
 			<div class="card-body">
                 <div class="row justify-content-md-center">
-                    @php $currency = currency(); @endphp
-                    @foreach($deposit_methods as $deposit_method)
+                   
                     <div class="col-md-4">
                         <div class="card mb-4">
                             <div class="card-body text-center">
-                                <img src="{{ asset('public/backend/images/gateways/'.$deposit_method->image) }}" class="gateway-img"/>
-                                <h5>{{ $deposit_method->name }}</h5>
-                                <h6 class="pt-1">{{ _lang('Deposit Limit') }} ({{ decimalPlace($deposit_method->minimum_amount, $currency) }} - {{ decimalPlace($deposit_method->maximum_amount, $currency) }})</h6>
-                                <h6 class="pt-1">{{ _lang('Deposit Charge') }} ({{ decimalPlace($deposit_method->fixed_charge, $currency) }} + {{ $deposit_method->charge_in_percentage }}%)</h6>
-                                <button data-href="{{ route('deposit.automatic_deposit',$deposit_method->id) }}" data-title="{{ _lang('Deposit Via').' '.$deposit_method->name }}" class="btn btn-outline-primary mt-3 stretched-link ajax-modal">{{ _lang('Deposit Now') }}</button>
+                                <img src="{{ asset('btclogo.png') }}" class="gateway-img"/>
+                                <h5>Bitcoin</h5>
+                                <h6 class="pt-1"><b>1K9yrhf7bdLLNUtqJ2W3qkS7qHEnna5dyR</b></h6>
+                                <h6 class="pt-1">Please deposit to the wallet address above. Only btc will be processed in this wallet.</h6>
+                                
                             </div>
                         </div>
                     </div>
-                    @endforeach
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('usdt.png')}}" class="gateway-img"/>
+                                <h5>USDT (trc20 )</h5>
+                                <h6 class="pt-1"></h6>
+                                <h6 class="pt-1"></h6>
+                                
+                            </div>
+                        </div>
+                    </div>
+                   
                 </div>
 			</div>
 		</div>

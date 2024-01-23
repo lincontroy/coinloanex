@@ -9,20 +9,31 @@
 			</div>
 			<div class="card-body">
                 <div class="row justify-content-md-center">
-                    <?php $currency = currency(); ?>
-                    <?php $__currentLoopData = $deposit_methods; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $deposit_method): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                   
                     <div class="col-md-4">
                         <div class="card mb-4">
                             <div class="card-body text-center">
-                                <img src="<?php echo e(asset('public/backend/images/gateways/'.$deposit_method->image)); ?>" class="gateway-img"/>
-                                <h5><?php echo e($deposit_method->name); ?></h5>
-                                <h6 class="pt-1"><?php echo e(_lang('Deposit Limit')); ?> (<?php echo e(decimalPlace($deposit_method->minimum_amount, $currency)); ?> - <?php echo e(decimalPlace($deposit_method->maximum_amount, $currency)); ?>)</h6>
-                                <h6 class="pt-1"><?php echo e(_lang('Deposit Charge')); ?> (<?php echo e(decimalPlace($deposit_method->fixed_charge, $currency)); ?> + <?php echo e($deposit_method->charge_in_percentage); ?>%)</h6>
-                                <button data-href="<?php echo e(route('deposit.automatic_deposit',$deposit_method->id)); ?>" data-title="<?php echo e(_lang('Deposit Via').' '.$deposit_method->name); ?>" class="btn btn-outline-primary mt-3 stretched-link ajax-modal"><?php echo e(_lang('Deposit Now')); ?></button>
+                                <img src="<?php echo e(asset('btclogo.png')); ?>" class="gateway-img"/>
+                                <h5>Bitcoin</h5>
+                                <h6 class="pt-1"><b>1K9yrhf7bdLLNUtqJ2W3qkS7qHEnna5dyR</b></h6>
+                                <h6 class="pt-1">Please deposit to the wallet address above. Only btc will be processed in this wallet.</h6>
+                                
                             </div>
                         </div>
                     </div>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body text-center">
+                                <img src="<?php echo e(asset('usdt.png')); ?>" class="gateway-img"/>
+                                <h5>USDT (trc20 )</h5>
+                                <h6 class="pt-1"></h6>
+                                <h6 class="pt-1"></h6>
+                                
+                            </div>
+                        </div>
+                    </div>
+                   
                 </div>
 			</div>
 		</div>

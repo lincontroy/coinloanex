@@ -6,30 +6,30 @@
 
 </a>
 
-<a class="nav-link" href="<?php echo e(route('transfer.send_money')); ?>">
+<!-- <a class="nav-link" href="<?php echo e(route('transfer.send_money')); ?>">
 	<div class="sb-nav-link-icon"><i class="icofont-location-arrow"></i></div>
 	<?php echo e(_lang('Send Money')); ?>
 
-</a>
+</a> -->
 
-<a class="nav-link" href="<?php echo e(route('transfer.exchange_money')); ?>">
+<!-- <a class="nav-link" href="<?php echo e(route('transfer.exchange_money')); ?>">
 	<div class="sb-nav-link-icon"><i class="icofont-exchange"></i></div>
 	<?php echo e(_lang('Exchange Money')); ?>
 
-</a>
-
+</a> -->
+<!-- 
 <a class="nav-link" href="<?php echo e(route('transfer.wire_transfer')); ?>">
 	<div class="sb-nav-link-icon"><i class="icofont-bank-transfer"></i></div>
 	<?php echo e(_lang('Wire Transfer')); ?>
 
-</a>
+</a> -->
 
-<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment_request" aria-expanded="false" aria-controls="collapseLayouts">
+<!-- <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment_request" aria-expanded="false" aria-controls="collapseLayouts">
 	<div class="sb-nav-link-icon"><i class="icofont-credit-card"></i></div>
 	<?php echo e(_lang('Payment Request')); ?>
 
 	<div class="sb-sidenav-collapse-arrow"><i class="icofont-rounded-down"></i></div>
-</a>
+</a> -->
 <div class="collapse" id="payment_request" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
 	<nav class="sb-sidenav-menu-nested nav">
 		<a class="nav-link" href="<?php echo e(route('payment_requests.create')); ?>"><?php echo e(_lang('New Request')); ?></a>
@@ -39,7 +39,7 @@
 
 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#deposit" aria-expanded="false" aria-controls="collapseLayouts">
 	<div class="sb-nav-link-icon"><i class="icofont-plus-circle"></i></div>
-	<?php echo e(_lang('Deposit Money')); ?>
+	<?php echo e(_lang('Deposit')); ?>
 
 	<div class="sb-sidenav-collapse-arrow"><i class="icofont-rounded-down"></i></div>
 </a>
@@ -53,7 +53,7 @@
 
 <a class="nav-link" href="<?php echo e(route('withdraw.manual_methods')); ?>">
 	<div class="sb-nav-link-icon"><i class="icofont-minus-circle"></i></div>
-	<?php echo e(_lang('Withdraw Money')); ?>
+	<?php echo e(_lang('Withdraw')); ?>
 
 </a>
 
@@ -65,7 +65,9 @@
 </a>
 <div class="collapse" id="loans" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
 	<nav class="sb-sidenav-menu-nested nav">
-		<a class="nav-link" href="<?php echo e(route('loans.apply_loan')); ?>"><?php echo e(_lang('Apply New Loan')); ?></a>
+		<a class="nav-link" href="/"><?php echo e(_lang('Apply New Loan')); ?></a>
+
+		<a class="nav-link" href="<?php echo e(route('loans.give_loan')); ?>"><?php echo e(_lang('Give Loan')); ?></a>
 		<a class="nav-link" href="<?php echo e(route('loans.my_loans')); ?>"><?php echo e(_lang('My Loans')); ?></a>
 		<a class="nav-link" href="<?php echo e(route('loans.calculator')); ?>"><?php echo e(_lang('Loan Calculator')); ?></a>
 	</nav>

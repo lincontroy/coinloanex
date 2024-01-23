@@ -205,6 +205,89 @@ class LoanController extends Controller {
 
     }
 
+    public function give_loan(Request $request) {
+        if ($request->isMethod('get')) {
+            return view('backend.customer_portal.loan.give_loan');
+        } else if ($request->isMethod('post')) {
+
+            return redirect()->route('deposit.automatic_methods')->with('error', _lang('You have insufficient balance, please top up to give loans'));
+        
+            @ini_set('max_execution_time', 0);
+            @set_time_limit(0);
+
+            $validator = Validator::make($request->all(), [
+                'loan_product_id'    => 'required',
+                'currency_id'        => 'required',
+                'first_payment_date' => 'required',
+                'applied_amount'     => 'required|numeric',
+                'attachment'         => 'nullable|mimes:jpeg,png,jpg,doc,pdf,docx,zip',
+            ]);
+
+            if ($validator->fails()) {
+                if ($request->ajax()) {
+                    return response()->json(['result' => 'error', 'message' => $validator->errors()->all()]);
+                } else {
+                    return redirect()->route('loans.apply_new')
+                        ->withErrors($validator)
+                        ->withInput();
+                }
+            }
+
+            $attachment = "";
+            if ($request->hasfile('attachment')) {
+                $file       = $request->file('attachment');
+                $attachment = time() . $file->getClientOriginalName();
+                $file->move(public_path() . "/uploads/media/", $attachment);
+            }
+
+            DB::beginTransaction();
+
+            $loan                         = new Loan();
+            $loan->loan_product_id        = $request->input('loan_product_id');
+            $loan->borrower_id            = auth()->id();
+            $loan->currency_id            = $request->input('currency_id');
+            $loan->first_payment_date     = $request->input('first_payment_date');
+            $loan->applied_amount         = $request->input('applied_amount');
+            $loan->late_payment_penalties = 0;
+            $loan->attachment             = $attachment;
+            $loan->description            = $request->input('description');
+            $loan->remarks                = $request->input('remarks');
+            $loan->created_user_id        = auth()->id();
+
+            $loan->save();
+
+            // Create Loan Repayments
+            $calculator = new Calculator(
+                $loan->applied_amount,
+                $request->first_payment_date,
+                $loan->loan_product->interest_rate,
+                $loan->loan_product->term,
+                $loan->loan_product->term_period,
+                $loan->late_payment_penalties
+            );
+
+            if ($loan->loan_product->interest_type == 'flat_rate') {
+                $repayments = $calculator->get_flat_rate();
+            } else if ($loan->loan_product->interest_type == 'fixed_rate') {
+                $repayments = $calculator->get_fixed_rate();
+            } else if ($loan->loan_product->interest_type == 'mortgage') {
+                $repayments = $calculator->get_mortgage();
+            } else if ($loan->loan_product->interest_type == 'one_time') {
+                $repayments = $calculator->get_one_time();
+            }
+
+            $loan->total_payable = $calculator->payable_amount;
+            $loan->save();
+
+            DB::commit();
+
+            if ($loan->id > 0) {
+                return redirect()->route('loans.my_loans')->with('success', _lang('Your Loan application submitted sucessfully and your application is now under review'));
+            }
+        }
+
+    }
+
     public function loan_payment(Request $request, $loan_id) {
         if (request()->isMethod('get')) {
             $loan = Loan::where('id', $loan_id)->where('borrower_id', auth()->id())->first();

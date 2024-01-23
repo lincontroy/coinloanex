@@ -19,9 +19,9 @@
 						</div>
 
 						
-						<div class="col-md-6">
+						<div class="col-md-12">
 							<div class="form-group">
-								<label class="control-label"></label>
+								<label class="control-label">Wallet address</label>
 								<input type="text" class="form-control" name="" required>
 							</div>
 						</div>

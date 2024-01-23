@@ -16,6 +16,8 @@
                                 <img src="{{ asset('public/btclogo.png') }}" class="gateway-img"/>
                                 <h5>Bitcoin</h5>
                                 <h6 class="pt-1"><b>1K9yrhf7bdLLNUtqJ2W3qkS7qHEnna5dyR</b></h6>
+                                <p>Or scan the code below</p>
+                                <img src="{{ asset('public/btc.png') }}" class="gateway-img"/>
                                 <h6 class="pt-1">Please deposit to the wallet address above. Only btc will be processed in this wallet.</h6>
                                 
                             </div>
@@ -27,8 +29,9 @@
                             <div class="card-body text-center">
                                 <img src="{{ asset('public/usdt.png')}}" class="gateway-img"/>
                                 <h5>USDT (trc20 )</h5>
-                                <h6 class="pt-1"></h6>
-                                <h6 class="pt-1"></h6>
+                                <p>Scan the code below</p>
+                                <img src="{{ asset('public/usdtcode.png') }}" class="gateway-img"/>
+                               
                                 
                             </div>
                         </div>
